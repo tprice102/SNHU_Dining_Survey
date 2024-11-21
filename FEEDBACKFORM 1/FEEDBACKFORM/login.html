@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNHU Dining Hall Feedback</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    
+    <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSeshZWTGfjb3OqTezf455Sr97vm-QPCWxdgMTQjonXvt1uunw/viewform?embedded=true" 
+        width="640" 
+        height="1322" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0">
+        Loading…
+    </iframe>
+    <!--
+    
+    <div class="form-box" id="feedback-form">
+     
+
+        <form id="feedback-form-content" onsubmit="submitFeedback(event)">
+            <h3>Student Information</h3>
+
+            <label for="student-year">Student Year:</label>
+            <select id="student-year" name="student-year" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Freshman">Freshman</option>
+                <option value="Sophomore">Sophomore</option>
+                <option value="Junior">Junior</option>
+                <option value="Senior">Senior</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="text" id="other-year-text" placeholder="Specify" style="display:none;">
+
+            <label for="dining-frequency">How often do you go to the dining hall:</label>
+            <select id="dining-frequency" name="dining-frequency" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Once a day or less">Once a day or less</option>
+                <option value="Twice a day">Twice a day</option>
+                <option value="Three times a day">Three times a day</option>
+                <option value="Four or more times a day">Four or more times a day</option>
+            </select>
+
+            <label for="favorite-meal">What’s your favorite mealtime:</label>
+            <select id="favorite-meal" name="favorite-meal" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Brunch">Brunch</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+            </select>
+
+            <label for="specials-week">Did you have any of the specials this week at the dining hall?</label>
+            <select id="specials-week" name="specials-week" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="specials-week">What dish did you liked the most for this week's menu?</label>
+            <select id="specials-week" name="specials-week">
+            </select>
+
+            <label for="liked-other-meals">Did you like any other meals that were not listed above?</label>
+            <select id="liked-other-meals" name="liked-other-meals">
+                <option value="" disabled selected>Select an option</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <div id="other-meals-input" style="display:none;">
+                <textarea id="other-meals-text" name="other-meals-text" placeholder="Enter the meals you liked" rows="4" cols="50"></textarea>
+            </div>
+
+            <label for="additional-feedback">Any additional feedback you'd like to share? (optional)</label>
+            <textarea id="additional-feedback" name="additional-feedback" placeholder="Enter your feedback"></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+
+        <div id="success-message" style="display:none;">
+            <h3>Thank you for your feedback!</h3>
+        </div>
+    </div>
+    -->
+
+    <script>
+        //Other
+        document.getElementById('student-year').addEventListener('change', function () {
+            document.getElementById('other-year-text').style.display = this.value === 'Other' ? 'block' : 'none';
+        });
+
+        document.getElementById('liked-other-meals').addEventListener('change', function () {
+            document.getElementById('other-meals-input').style.display = this.value === 'Yes' ? 'block' : 'none';
+        });
+
+        function submitFeedback(event) {
+            event.preventDefault();
+            document.getElementById('feedback-form-content').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
